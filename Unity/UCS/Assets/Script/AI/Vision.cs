@@ -32,7 +32,7 @@ namespace AI
                 {
                     if (_lookState != LookState.Player)
                     {
-                        // プレイヤーを見つけた処理
+                        // プレイヤーを見つけた処理.
                         Debug.Log("Player found.");
                         _lookState = LookState.Player;
                         if (OnFindPlayer != null)
@@ -43,7 +43,7 @@ namespace AI
                 {
                     if (_lookState != LookState.Object)
                     {
-                        // 他を見つけた処理
+                        // 他を見つけた処理.
                         Debug.Log("Other found.");
                         _lookState = LookState.Object;
                         if (OnFindObject != null)
