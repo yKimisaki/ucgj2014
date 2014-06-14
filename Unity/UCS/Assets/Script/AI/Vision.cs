@@ -21,36 +21,52 @@ namespace AI
             if (Physics.Raycast(ray, out hit))
             {
                 var hitObject = hit.transform.gameObject;
-                if (hitObject == null)
-                {
-                    _lookState = LookState.None;
-                    return;
-                }
 
                 var player = hitObject.GetComponent<Player>();
-                if (player != null)
+                if (player != null && _lookState != LookState.Player)
                 {
-                    if (_lookState != LookState.Player)
+                    if ((hitObject.transform.position - transform.position).sqrMagnitude > 30)
                     {
-                        // プレイヤーを見つけた処理.
-                        Debug.Log("Player found.");
-                        _lookState = LookState.Player;
-                        if (OnFindPlayer != null)
-                            OnFindPlayer();
+                        Miss();
+                        return;
                     }
+
+                    FindPlayer();
+                }
+                else if (_lookState != LookState.Object)
+                {
+                    if ((hitObject.transform.position - transform.position).sqrMagnitude > 10)
+                    {
+                        Miss();
+                        return;
+                    }
+
+                    FindObject();
                 }
                 else
                 {
-                    if (_lookState != LookState.Object)
-                    {
-                        // 他を見つけた処理.
-                        Debug.Log("Other found.");
-                        _lookState = LookState.Object;
-                        if (OnFindObject != null)
-                            OnFindObject();
-                    }
+                    Miss();
                 }
             }
+        }
+
+        void FindObject()
+        {
+            _lookState = LookState.Object;
+            if (OnFindObject != null)
+                OnFindObject();
+        }
+
+        void FindPlayer()
+        {
+            _lookState = LookState.Player;
+            if (OnFindPlayer != null)
+                OnFindPlayer();
+        }
+
+        void Miss()
+        {
+            _lookState = LookState.None;
         }
     }
 }

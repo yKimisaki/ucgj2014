@@ -15,6 +15,8 @@ namespace AI
         {
             _vision = GetComponent<Vision>();
             _actionSelector = GetComponent<ActionSelector>();
+
+            _vision.OnFindObject += _actionSelector.OnNearWall;
         }
 
         // Update is called once per frame

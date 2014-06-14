@@ -9,7 +9,6 @@ namespace AI
 
         public void Stand()
         {
-            Debug.Log("とまります");
         }
 
         public void LookAround()
@@ -22,7 +21,7 @@ namespace AI
 
         public void Walk()
         {
-            Debug.Log("歩きます");
+            transform.position = transform.position + transform.forward * 0.05f;
         }
 
         public void Run()
@@ -34,7 +33,8 @@ namespace AI
         }
 
         public void Turn(float angle)
-        { 
+        {
+            transform.Rotate(Vector3.up, angle);
         }
 
         public void Hit()
