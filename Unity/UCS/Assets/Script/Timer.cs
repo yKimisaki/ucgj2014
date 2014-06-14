@@ -5,27 +5,13 @@ using System.Text;
 
 namespace Util
 {
-    class Timer
-    {
-        public static WaitTimer CreateWait(TimeSpan timeSpan)
-        {
-            return new WaitTimer(timeSpan);
-        }
-    }
-
     class WaitTimer
     {
         private DateTime _target;
-        private TimeSpan _span;
 
-        public WaitTimer(TimeSpan timeSpan)
+        public void Start(TimeSpan timeSpan)
         {
-            _span = timeSpan;
-        }
-
-        public void Start()
-        {
-            _target = DateTime.Now + _span;
+            _target = DateTime.Now + timeSpan;
         }
 
         public bool Check()

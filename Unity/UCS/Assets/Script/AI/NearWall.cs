@@ -11,8 +11,6 @@ namespace AI
 
         public void OnTriggerEnter(Collider other)
         {
-            Debug.Log("pipo");
-
             if (other.gameObject.GetComponent<Player>() != null)
                 return;
 
