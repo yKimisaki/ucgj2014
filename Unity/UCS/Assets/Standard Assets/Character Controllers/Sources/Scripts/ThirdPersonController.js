@@ -170,6 +170,7 @@ function UpdateSmoothedMovementDirection ()
 		// moveDirection is always normalized, and we only update it if there is user input.
 		if (targetDirection != Vector3.zero)
 		{
+		gameObject.GetComponent(ThirdPersonController).ashi();
 			// If we are really slow, just snap to the target direction
 			if (moveSpeed < walkSpeed * 0.9 && grounded)
 			{
@@ -455,3 +456,18 @@ function Reset ()
 	gameObject.tag = "Player";
 }
 
+var Timer: float = 0.3;
+function ashi () {
+    if (Timer > 0) {
+     
+        Timer -= Time.deltaTime;
+         
+    }
+ 
+    if (Timer <= 0) {
+        Debug.Log("タイマーが0になりました");
+        audio.Play();
+        Timer=0.3;
+    }
+ 
+}
