@@ -26,3 +26,6 @@ Unity/UCS/Assembly-UnityScript-firstpass-vs.unityproj
 Unity/UCS/Assembly-UnityScript-firstpass.unityproj
 Unity/UCS/Assembly-UnityScript.unityproj
 Unity/UCS/Assembly-UnityScript-vs.unityproj
+
+Unity/UCS/Assembly-CSharp-vs.csproj
+Unity/UCS/Assembly-CSharp.csproj
