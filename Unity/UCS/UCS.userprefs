@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Check_ScreenShot.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js">
     <Files>
-      <File FileName="../../../Desktop/Outdoor20140610/Assets/Scripts/ChangeTexture3.cs" Line="50" Column="24" />
-      <File FileName="Assets/Scripts/Check_ScreenShot.cs" Line="26" Column="1" />
-      <File FileName="Assets/Scripts/ScreenShot.cs" Line="21" Column="17" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="54" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
