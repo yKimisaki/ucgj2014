@@ -864,7 +864,7 @@ GameObject:
   - 4: {fileID: 129585050}
   - 65: {fileID: 129585051}
   m_Layer: 0
-  m_Name: in_centerwall4
+  m_Name: in_centerwall5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2099,7 +2099,7 @@ GameObject:
   - 4: {fileID: 518711336}
   - 65: {fileID: 518711337}
   m_Layer: 0
-  m_Name: in_centerwall11
+  m_Name: in_centerwall5_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2575,7 +2575,6 @@ Transform:
   - {fileID: 1938429172}
   - {fileID: 518711336}
   - {fileID: 2028215990}
-  - {fileID: 1169952040}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &684088736
@@ -5100,46 +5099,6 @@ Transform:
   - {fileID: 1977414337}
   m_Father: {fileID: 72703120}
   m_RootOrder: 0
---- !u!1 &1169952039
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1169952040}
-  - 65: {fileID: 1169952041}
-  m_Layer: 0
-  m_Name: in_centerwall13
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1169952040
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1169952039}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: -4.75917816, y: 2.5999999, z: -15.1238117}
-  m_LocalScale: {x: 8, y: 3.0800004, z: .300000042}
-  m_Children: []
-  m_Father: {fileID: 661648874}
-  m_RootOrder: 19
---- !u!65 &1169952041
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1169952039}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1171233847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9037,7 +8996,7 @@ MonoBehaviour:
   distance: 3
   height: 1
   angularSmoothLag: .100000001
-  angularMaxSpeed: 175
+  angularMaxSpeed: 1
   heightSmoothLag: .300000012
   snapSmoothLag: .200000003
   snapMaxSpeed: 720
@@ -9064,14 +9023,14 @@ MonoBehaviour:
   runMaxAnimationSpeed: .899999976
   jumpAnimationSpeed: 1.14999998
   landAnimationSpeed: 1
-  walkSpeed: 3
-  trotSpeed: 4
-  runSpeed: 8
+  walkSpeed: 1
+  trotSpeed: 1
+  runSpeed: 3
   inAirControlAcceleration: 3
   jumpHeight: 1
   gravity: 20
   speedSmoothing: 10
-  rotateSpeed: 500
+  rotateSpeed: 1
   trotAfterSeconds: 2
   canJump: 1
 --- !u!143 &1837499759
@@ -9643,7 +9602,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900729903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .650249481, z: .146974564}
+  m_LocalPosition: {x: 0, y: .650249481, z: .540000021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1837499756}
@@ -9912,7 +9871,7 @@ GameObject:
   - 4: {fileID: 1938429172}
   - 65: {fileID: 1938429173}
   m_Layer: 0
-  m_Name: in_centerwall10
+  m_Name: in_centerwall4_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10420,7 +10379,7 @@ GameObject:
   - 4: {fileID: 2028215990}
   - 65: {fileID: 2028215991}
   m_Layer: 0
-  m_Name: in_centerwall12
+  m_Name: in_centerwall6_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

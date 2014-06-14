@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/develop.unity
   - enabled: 1
     path: Assets/Scenes/check_screenshots.unity
+  - enabled: 1
+    path: Assets/Scene/gameover.unity

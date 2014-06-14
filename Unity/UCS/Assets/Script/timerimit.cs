@@ -5,7 +5,8 @@ public class timerimit : MonoBehaviour {
 	public float startTime = 30.0f; // seconds
 	public float timer;
 	public bool paused = true;
-		
+	private int count = 0;
+
 	private void Start()
 	{
 		reset();
@@ -18,14 +19,23 @@ public class timerimit : MonoBehaviour {
 		
 	private void Update()
 	{
+		if(Input.GetKeyDown("p")){
+			count = count + 1;
+		}
+
 //		if (paused) return;
 			timer -= Time.deltaTime;
 			if (timer <= 0.0f)
 			{
 				timer = 0.0f;
 				paused = true;
-					
+				if(count == 0){
 					// 何かの処理
+					Application.LoadLevel("gameover");
+				}
+				else{
+				Application.LoadLevel("check_screenshots");
+				}
 			}
 		}
 		
