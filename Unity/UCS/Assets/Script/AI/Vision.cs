@@ -20,10 +20,12 @@ namespace AI
             if (Physics.Raycast(ray, out hit))
             {
                 var hitObject = hit.transform.gameObject;
+                Debug.Log(hitObject);
 
                 var player = hitObject.GetComponent<Player>();
                 if (player != null && _lookState != LookState.Player)
                 {
+
                     if ((hitObject.transform.position - transform.position).sqrMagnitude > 30)
                     {
                         Miss();

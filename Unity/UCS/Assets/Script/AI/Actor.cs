@@ -47,8 +47,8 @@ namespace AI
 
         public void FollowPlayer(Player player)
         {
-            transform.localRotation = Quaternion.LookRotation(
-                (player.transform.position - transform.position).normalized);
+            var vec = player.transform.position - transform.position;
+            transform.localRotation = Quaternion.LookRotation(new Vector3(vec.x, 0, vec.z).normalized);
 
             Run();
         }
