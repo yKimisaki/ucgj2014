@@ -31,5 +31,8 @@ public class Check_ScreenShot : MonoBehaviour {
 			Shader.SetGlobalTexture("_Photo", tex);
 			k = (k + 1)%tex2.Count;
 		}
+		if(Input.GetKeyDown("g")){
+			Application.LoadLevel("collection");
+		}
 	}
 }
