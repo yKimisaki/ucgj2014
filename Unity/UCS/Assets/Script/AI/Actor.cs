@@ -58,8 +58,12 @@ namespace AI
             transform.Rotate(Vector3.up, angle);
         }
 
-        public void Hit()
+        public void Attack()
         {
+            if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("SLIDE00"))
+            {
+                Animator.Play("SLIDE00");
+            }
         }
     }
 }

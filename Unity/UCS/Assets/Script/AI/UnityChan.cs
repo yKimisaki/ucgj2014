@@ -21,12 +21,19 @@ namespace AI
 
             _nearWall.OnNearWall += _actionSelector.OnNearWall;
             _vision.OnFindPlayer += _actionSelector.OnFindPlayer;
+            _nearWall.OnHungPlayer += GameOver;
+            _nearWall.OnHungPlayer += _actionSelector.LastMotion;
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        void GameOver()
+        {
+            Debug.Log("GAME OVER");
         }
     }
 }
