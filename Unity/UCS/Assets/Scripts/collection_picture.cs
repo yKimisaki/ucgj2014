@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 
-public class Check_ScreenShot : MonoBehaviour {
+
+public class collection_picture : MonoBehaviour {
 	private Texture2D tex;
 	private List <Texture2D> tex2;
 	private int k = 0;
-	
+
 	// Use this for initialization
 	void Start () {
 		tex2 = new List<Texture2D>();
@@ -20,16 +22,16 @@ public class Check_ScreenShot : MonoBehaviour {
 				break;
 			}
 		}
-		tex = tex2[0];
-		Shader.SetGlobalTexture("_Photo", tex);
-	}
 
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown("c")){
-			tex = tex2[k];
+		for(k = 0; k!= 0; k++){
+			tex = tex2[0];
 			Shader.SetGlobalTexture("_Photo", tex);
 			k = (k + 1)%tex2.Count;
 		}
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
 	}
 }
