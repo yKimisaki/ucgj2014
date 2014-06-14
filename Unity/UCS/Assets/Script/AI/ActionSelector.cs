@@ -13,15 +13,17 @@ namespace AI
         private Actor _actor;
         private WaitTimer _wait;
 
-        enum ActionState { Stand, Walk, Run, Turn };
-        private ActionState _state;
+        enum ActionState { Stand, Walk, Run, Turn, FindPlayer };
+        private ActionState _actionState;
+        private bool _isFollow = false;
+        private Player _follow;
 
         private int _waitNumber = 0;
 
         void Start()
         {
             _actor = GetComponent<Actor>();
-            _state = ActionState.Stand;
+            _actionState = ActionState.Stand;
 
             _wait = new WaitTimer();
             _wait.Start(TimeSpan.FromSeconds(3));
@@ -29,18 +31,54 @@ namespace AI
 
         void Update()
         {
-            if (_state == ActionState.Stand && _wait.Check())
+            if (_isFollow)
+            {
+                switch (_actionState)
+                {
+                    case ActionState.Turn:
+                        _actor.Turn(Random.Range(60, 60));
+                        _actionState = ActionState.Run;
+                        break;
+                    case ActionState.Run:
+                        _actor.Run();
+                        var ray = new Ray(this.transform.position,
+                            (_follow.transform.position- transform.position).normalized);
+                        RaycastHit hit;
+                        if (Physics.Raycast(ray, out hit))
+                            if (hit.transform.gameObject.GetComponent<Player>() != null)
+                                _actionState = ActionState.FindPlayer;
+                        break;
+                    case ActionState.FindPlayer:
+                        _actor.FollowPlayer(_follow);
+                        break;
+                }
+                return;
+            }
+
+            if (_actionState == ActionState.FindPlayer)
+            {
+                if (!_wait.Check())
+                {
+                    _actor.FindPlayer();
+                    return;
+                }
+
+                _isFollow = true;
+                return;
+            }
+
+            if (_actionState == ActionState.Stand && _wait.Check())
             {
                 StartWalkOrRun();
             }
 
-            switch (_state)
+            switch (_actionState)
             {
                 case ActionState.Stand:
                     _actor.Stand(_waitNumber);
                     break;
                 case ActionState.Walk:
-                        _actor.Walk();
+                    _actor.Walk();
                     break;
                 case ActionState.Run:
                     _actor.Run();
@@ -58,12 +96,22 @@ namespace AI
             StartTurn();
         }
 
+        public void OnFindPlayer(Player player)
+        {
+            if (_isFollow)
+                return;
+
+            _follow = player;
+            _actionState = ActionState.FindPlayer;
+            _wait.Start(TimeSpan.FromSeconds(3));
+        }
+
         void StartWalkOrRun()
         {
             if (Random.Range(0, 100) > 90)
-                _state = ActionState.Run;
+                _actionState = ActionState.Run;
             else
-                _state = ActionState.Walk;
+                _actionState = ActionState.Walk;
         }
 
         void StartStand()
@@ -73,12 +121,12 @@ namespace AI
 
             var waitTime = _waitNumber == 1 ?  7 : Random.Range(2, 5);
             _wait.Start(TimeSpan.FromSeconds(waitTime));
-            _state = ActionState.Stand;
+            _actionState = ActionState.Stand;
         }
 
         void StartTurn()
         {
-            _state = ActionState.Turn;
+            _actionState = ActionState.Turn;
         }
     }
 }

@@ -25,6 +25,8 @@ namespace AI
 
         public void FindPlayer()
         {
+            if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("LOSE00"))
+                Animator.Play("LOSE00");
         }
 
         public void Walk()
@@ -45,6 +47,10 @@ namespace AI
 
         public void FollowPlayer(Player player)
         {
+            transform.localRotation = Quaternion.LookRotation(
+                (player.transform.position - transform.position).normalized);
+
+            Run();
         }
 
         public void Turn(float angle)

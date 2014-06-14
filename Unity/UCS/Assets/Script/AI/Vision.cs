@@ -7,7 +7,7 @@ namespace AI
 {
     public class Vision : MonoBehaviour
     {
-        public event Action OnFindPlayer;
+        public event Action<Player> OnFindPlayer;
 
         private enum LookState { Player, None };
         private LookState _lookState;
@@ -30,7 +30,7 @@ namespace AI
                         return;
                     }
 
-                    FindPlayer();
+                    FindPlayer(player);
                     return;
                 }
             }
@@ -38,11 +38,11 @@ namespace AI
             Miss();
         }
 
-        void FindPlayer()
+        void FindPlayer(Player player)
         {
             _lookState = LookState.Player;
             if (OnFindPlayer != null)
-                OnFindPlayer();
+                OnFindPlayer(player);
         }
 
         void Miss()

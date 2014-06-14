@@ -20,6 +20,7 @@ namespace AI
             _nearWall = GetComponent<NearWall>();
 
             _nearWall.OnNearWall += _actionSelector.OnNearWall;
+            _vision.OnFindPlayer += _actionSelector.OnFindPlayer;
         }
 
         // Update is called once per frame
