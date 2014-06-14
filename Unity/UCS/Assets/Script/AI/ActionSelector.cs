@@ -3,6 +3,7 @@ using System.Collections;
 using Util;
 using System;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
 
 namespace AI
 {
@@ -12,7 +13,7 @@ namespace AI
         private Actor _actor;
         private WaitTimer _wait;
 
-        enum ActionState { Stand, Walk };
+        enum ActionState { Stand, Walk, Turn };
         private ActionState _state;
 
         void Start()
@@ -26,26 +27,45 @@ namespace AI
 
         void Update()
         {
-            if (_wait.Check())
+            if (_state == ActionState.Stand && _wait.Check())
             {
-                ChangeState();
-                _wait.Start();
+                StartWalk();
             }
-        }
 
-        void ChangeState()
-        {
             switch (_state)
             {
                 case ActionState.Stand:
-                    _state = ActionState.Walk;
-                    _actor.Walk();
-                    break;
-                case ActionState.Walk:
-                    _state = ActionState.Stand;
                     _actor.Stand();
                     break;
+                case ActionState.Walk:
+                    _actor.Walk();
+                    break;
+                case ActionState.Turn:
+                    _actor.Turn(180);
+                    StartStand();
+                    break;
             }
+        }
+
+        public void OnNearWall()
+        {
+            StartTurn();
+        }
+
+        void StartWalk()
+        {
+            _state = ActionState.Walk;
+        }
+
+        void StartStand()
+        {
+            _wait.Start();
+            _state = ActionState.Stand;
+        }
+
+        void StartTurn()
+        {
+            _state = ActionState.Turn;
         }
     }
 }
