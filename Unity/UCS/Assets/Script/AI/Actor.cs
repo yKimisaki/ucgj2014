@@ -5,11 +5,13 @@ namespace AI
 {
     public class Actor : MonoBehaviour
     {
+        public Animation Animation;
+
         public void Stand()
         {
         }
 
-        public void LookAround(float time)
+        public void LookAround()
         {
         }
 
@@ -17,11 +19,12 @@ namespace AI
         {
         }
 
-        public void Walk(float distance)
+        public void Walk()
         {
+            transform.position = transform.position + transform.forward * 0.05f;
         }
 
-        public void Run(float distance)
+        public void Run()
         {
         }
 
@@ -30,7 +33,8 @@ namespace AI
         }
 
         public void Turn(float angle)
-        { 
+        {
+            transform.Rotate(Vector3.up, angle);
         }
 
         public void Hit()

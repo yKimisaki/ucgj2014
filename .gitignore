@@ -29,3 +29,6 @@ Unity/UCS/Assembly-UnityScript-vs.unityproj
 
 Unity/UCS/Assembly-CSharp-vs.csproj
 Unity/UCS/Assembly-CSharp.csproj
+Unity/UCS/Assets/Locomotion Setup/TestScene.unity
+Unity/UCS/Assembly-CSharp-firstpass-vs.csproj
+Unity/UCS/Assembly-CSharp-firstpass.csproj
