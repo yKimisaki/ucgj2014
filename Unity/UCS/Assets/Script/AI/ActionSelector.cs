@@ -41,14 +41,15 @@ namespace AI
                     _actor.Walk();
                     break;
                 case ActionState.Turn:
-                    _actor.Turn(Random.Range(120, 240));
+                    _actor.Turn(Random.Range(-60, 60));
                     StartStand();
                     break;
             }
         }
 
-        public void OnNearWall()
+        public void OnNearWall(Vector3 normal)
         {
+            this.transform.rotation = Quaternion.LookRotation(normal);
             StartTurn();
         }
 

@@ -7,16 +7,18 @@ namespace AI
 {
     public class NearWall : MonoBehaviour
     {
-        public event Action OnNearWall;
+        public event Action<Vector3> OnNearWall;
 
-        void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
             Debug.Log("pipo");
+
             if (other.gameObject.GetComponent<Player>() != null)
                 return;
 
+            var normal = other.transform.forward;
             if (OnNearWall != null)
-                OnNearWall();
+                OnNearWall(normal);
         }
     }
 }
