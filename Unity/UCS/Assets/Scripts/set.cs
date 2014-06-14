@@ -31,7 +31,7 @@ public class set : MonoBehaviour {
 			Cam_B.enabled = false; //停止
 		}
 
-		if(Input.GetKey("q")){
+		if(Input.GetKey("t")){
 			Application.LoadLevel("check_screenshots");
 		}
 	}

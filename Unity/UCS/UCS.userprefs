@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Check_ScreenShot.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonCamera.js">
     <Files>
       <File FileName="Assets/Scripts/Check_ScreenShot.cs" Line="6" Column="24" />
       <File FileName="Assets/UnityChan/Scripts/UnityChanControlScriptWithRgidBody.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/set.cs" Line="20" Column="31" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonCamera.js" Line="120" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

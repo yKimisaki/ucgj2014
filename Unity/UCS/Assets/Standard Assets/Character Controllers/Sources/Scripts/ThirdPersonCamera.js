@@ -11,7 +11,7 @@ var distance = 7.0;
 var height = 3.0;
 
 var angularSmoothLag = 0.3;
-var angularMaxSpeed = 15.0;
+var angularMaxSpeed = 1.0;
 
 var heightSmoothLag = 0.3;
 

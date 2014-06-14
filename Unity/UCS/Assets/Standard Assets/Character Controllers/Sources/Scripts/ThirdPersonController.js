@@ -90,6 +90,10 @@ private var lastGroundedTime = 0.0;
 
 private var isControllable = true;
 
+
+//original
+private var AngH = 0.0f;
+
 function Awake ()
 {
 	moveDirection = transform.TransformDirection(Vector3.forward);
@@ -169,7 +173,9 @@ function UpdateSmoothedMovementDirection ()
 			// If we are really slow, just snap to the target direction
 			if (moveSpeed < walkSpeed * 0.9 && grounded)
 			{
-				moveDirection = targetDirection.normalized;
+				moveDirection = targetDirection.normalized; //  problem position
+				
+//				Debug.Log("if");
 			}
 			// Otherwise smoothly turn towards it
 			else
@@ -177,6 +183,7 @@ function UpdateSmoothedMovementDirection ()
 				moveDirection = Vector3.RotateTowards(moveDirection, targetDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000);
 				
 				moveDirection = moveDirection.normalized;
+//				Debug.Log("else");
 			}
 		}
 		
@@ -287,7 +294,17 @@ function DidJump ()
 }
 
 function Update() {
+	//original
 	
+//	if(Input.GetKey("q")){
+//		transform.Rotate(0,AngH,0);
+//		AngH = AngH - 0.1f;
+//	}
+//	if(Input.GetKey("e")){
+//		transform.Rotate(0,AngH,0);			
+//		AngH = AngH + 0.1f;
+//	}
+//	
 	if (!isControllable)
 	{
 		// kill all inputs if not controllable.
