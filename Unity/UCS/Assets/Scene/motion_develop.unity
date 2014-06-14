@@ -4005,8 +4005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa56ec8b9096a7f4c8fd942803f8133a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cam_A: {fileID: 1348070348}
-  Cam_B: {fileID: 721122218}
+  Cam_A: {fileID: 721122218}
+  Cam_B: {fileID: 1348070348}
 --- !u!1 &963191363
 GameObject:
   m_ObjectHideFlags: 0
