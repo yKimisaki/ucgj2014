@@ -643,7 +643,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: OnPlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 87f4a5545346320489e53bde1dbbc2c4,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

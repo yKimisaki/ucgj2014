@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A28D384E-B6EE-333F-D6C2-12400F4865A5}</ProjectGuid>
+	<ProjectGuid>{87889D41-B4EF-0D2E-F8B4-2E551470FDBD}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript-firstpass</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,16 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Locomotion Setup\Locomotion\Scripts\Locomotion.cs" />
-     <Compile Include="Assets\Locomotion Setup\Scripts\JoystickToEvents.cs" />
-     <Compile Include="Assets\Locomotion Setup\Scripts\LocomotionPlayer.cs" />
-     <Compile Include="Assets\UnityChan\FaceAnimation\FaceUpdate.cs" />
-     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
-     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
-     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
-     <Compile Include="Assets\set.cs" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\Scripts\Camera Scripts\MouseOrbit.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\Shaders\Change_Photo.shader" />
      <None Include="Assets\UnityChan\Voice\unity-chan_voice_list.txt" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
@@ -64,12 +63,6 @@
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{1C29E8C3-FF93-7241-E42A-8728E66E3858}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{87889D41-B4EF-0D2E-F8B4-2E551470FDBD}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
