@@ -5,11 +5,14 @@ namespace AI
 {
     public class Actor : MonoBehaviour
     {
+        public Animation Animation;
+
         public void Stand()
         {
+            Debug.Log("とまります");
         }
 
-        public void LookAround(float time)
+        public void LookAround()
         {
         }
 
@@ -17,11 +20,12 @@ namespace AI
         {
         }
 
-        public void Walk(float distance)
+        public void Walk()
         {
+            Debug.Log("歩きます");
         }
 
-        public void Run(float distance)
+        public void Run()
         {
         }
 
