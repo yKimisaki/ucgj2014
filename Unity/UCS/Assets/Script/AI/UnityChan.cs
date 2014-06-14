@@ -5,18 +5,21 @@ namespace AI
 {
     [RequireComponent(typeof(Vision))]
     [RequireComponent(typeof(ActionSelector))]
+    [RequireComponent(typeof(NearWall))]
     public class UnityChan : MonoBehaviour
     {
         private Vision _vision;
         private ActionSelector _actionSelector;
+        private NearWall _nearWall;
 
         // Use this for initialization
         void Start()
         {
             _vision = GetComponent<Vision>();
             _actionSelector = GetComponent<ActionSelector>();
+            _nearWall = GetComponent<NearWall>();
 
-            _vision.OnFindObject += _actionSelector.OnNearWall;
+            _nearWall.OnNearWall += _actionSelector.OnNearWall;
         }
 
         // Update is called once per frame

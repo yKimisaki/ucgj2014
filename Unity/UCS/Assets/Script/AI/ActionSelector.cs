@@ -41,7 +41,7 @@ namespace AI
                     _actor.Walk();
                     break;
                 case ActionState.Turn:
-                    _actor.Turn(180);
+                    _actor.Turn(Random.Range(120, 240));
                     StartStand();
                     break;
             }

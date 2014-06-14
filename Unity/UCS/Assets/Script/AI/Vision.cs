@@ -8,9 +8,8 @@ namespace AI
     public class Vision : MonoBehaviour
     {
         public event Action OnFindPlayer;
-        public event Action OnFindObject;
 
-        private enum LookState { Player, Object, None };
+        private enum LookState { Player, None };
         private LookState _lookState;
 
         // Update is called once per frame
@@ -32,29 +31,11 @@ namespace AI
                     }
 
                     FindPlayer();
-                }
-                else if (_lookState != LookState.Object)
-                {
-                    if ((hitObject.transform.position - transform.position).sqrMagnitude > 10)
-                    {
-                        Miss();
-                        return;
-                    }
-
-                    FindObject();
-                }
-                else
-                {
-                    Miss();
+                    return;
                 }
             }
-        }
 
-        void FindObject()
-        {
-            _lookState = LookState.Object;
-            if (OnFindObject != null)
-                OnFindObject();
+            Miss();
         }
 
         void FindPlayer()
