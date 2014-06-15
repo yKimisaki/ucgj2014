@@ -2,11 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/collection_picture.cs">
     <Files>
-      <File FileName="Assets/Scripts/Check_ScreenShot.cs" Line="21" Column="5" />
+      <File FileName="Assets/Scripts/Check_ScreenShot.cs" Line="35" Column="37" />
       <File FileName="Assets/Scripts/set.cs" Line="3" Column="1" />
       <File FileName="Assets/Script/timerimit.cs" Line="30" Column="18" />
       <File FileName="Assets/Script/Timer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/collection_picture.cs" Line="34" Column="27" />
+      <File FileName="Assets/Scripts/collection_picture.cs" Line="29" Column="14" />
+      <File FileName="Assets/Script/AI/UnityChan.cs" Line="33" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
