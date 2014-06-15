@@ -2,7 +2,7 @@
 using System;
 
 public class timerimit : MonoBehaviour {
-	public float startTime = 30.0f; // seconds
+	public float startTime = 10.0f; // seconds
 	public float timer;
 	public bool paused = true;
 	private int count = 0;
