@@ -25,7 +25,7 @@ public class collection_picture : MonoBehaviour {
 				break;
 			}
 		}
-		for(k=0;k<=9;k++){
+		for(k=0;k<=12;k++){
 			GameObject obj = GameObject.Find("/BigCube/Cube"+k);
 			if(k>=j){
 				obj.SetActiveRecursively(!obj.active);
