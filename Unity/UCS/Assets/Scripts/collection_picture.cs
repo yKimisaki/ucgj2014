@@ -29,7 +29,7 @@ public class collection_picture : MonoBehaviour {
 			GameObject obj = GameObject.Find("/BigCube/Cube"+k);
 			if(k>=j){
 				obj.SetActiveRecursively(!obj.active);
-				Debug.Log("okok");
+//				Debug.Log("okok");
 			}
 		}
 	}
