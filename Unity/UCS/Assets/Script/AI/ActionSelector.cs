@@ -15,7 +15,10 @@ namespace AI
 
         enum ActionState { Stand, Walk, Run, Turn, FindPlayer };
         private ActionState _actionState;
-        private bool _isFollow = false;
+
+        enum GameState { Search, Follow, GameEnd };
+        private GameState _gameState = GameState.Search;
+
         private Player _follow;
 
         private int _waitNumber = 0;
@@ -31,7 +34,19 @@ namespace AI
 
         void Update()
         {
-            if (_isFollow)
+            if (_gameState == GameState.GameEnd)
+            {
+                if (!_wait.Check())
+                {
+                    _actor.Attack();
+                    return;
+                }
+
+                _actor.Stand(0);
+                return;
+            }
+
+            if (_gameState == GameState.Follow)
             {
                 switch (_actionState)
                 {
@@ -63,7 +78,7 @@ namespace AI
                     return;
                 }
 
-                _isFollow = true;
+                _gameState = GameState.Follow;
                 return;
             }
 
@@ -98,7 +113,7 @@ namespace AI
 
         public void OnFindPlayer(Player player)
         {
-            if (_isFollow)
+            if (_gameState == GameState.Follow)
                 return;
 
             _follow = player;
@@ -127,6 +142,12 @@ namespace AI
         void StartTurn()
         {
             _actionState = ActionState.Turn;
+        }
+
+        public void LastMotion()
+        {
+            _gameState = GameState.GameEnd;
+            _wait.Start(TimeSpan.FromSeconds(3));
         }
     }
 }
