@@ -34,6 +34,7 @@ namespace AI
         void GameOver()
         {
             Debug.Log("GAME OVER");
+			Application.LoadLevel("gameover");
         }
     }
 }

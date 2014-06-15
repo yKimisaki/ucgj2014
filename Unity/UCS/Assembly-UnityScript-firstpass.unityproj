@@ -64,6 +64,15 @@
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+ <Reference Include="Tao.OpenGl.ExtensionLoader">
+ <HintPath>/Users/hatamototakahiro/ucgj2014/Unity/UCS/Assets/Script/ImageLoader/Tao.OpenGl.ExtensionLoader.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Drawing">
+ <HintPath>/Users/hatamototakahiro/ucgj2014/Unity/UCS/Assets/Script/ImageLoader/System.Drawing.dll</HintPath>
+ </Reference>
+ <Reference Include="Tao.OpenGl">
+ <HintPath>/Users/hatamototakahiro/ucgj2014/Unity/UCS/Assets/Script/ImageLoader/Tao.OpenGl.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
